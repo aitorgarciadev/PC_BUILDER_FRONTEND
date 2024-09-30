@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from "vue";
+import ProductCard from "./ProductCard.vue"; // Importar el componente ProductCard
 
 const products = [
   {
@@ -176,40 +177,11 @@ onBeforeUnmount(() => {
         <div
           class="bg-white pt-10 pr-8 pl-8 pb-10 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 overflow-hidden"
         >
-          <div
+          <ProductCard
             v-for="(product, index) in visibleProducts"
             :key="product.id"
-            class="group rounded-md relative p-6 border-2 border-slate-400/10 shadow-lg shadow-primary/10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-          >
-            <div
-              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-85 lg:h-60 h-48"
-            >
-              <img
-                :src="product.imageSrc"
-                :alt="product.imageAlt"
-                class="h-full w-full object-cover object-center lg:h-full lg:w-full"
-              />
-            </div>
-            <div class="mt-4 flex justify-between">
-              <div>
-                <h3 class="text-md text-gray-700 font-semibold sm:text-lg">
-                  <a :href="product.href">
-                    <span aria-hidden="true" class="absolute inset-0" />
-                    {{ product.name }}
-                  </a>
-                </h3>
-                <p class="mt-1 text-sm text-gray-500">{{ product.category }}</p>
-              </div>
-              <p class="text-md font-medium text-gray-900">
-                {{ product.price }}
-              </p>
-            </div>
-            <button
-              class="mt-4 w-full bg-gray-900 text-white font-bold py-2 px-4 rounded hover:bg-gray-700 transition duration-300 relative text-lg"
-            >
-              Comprar
-            </button>
-          </div>
+            :product="product"
+          />
         </div>
         <div
           class="lg:hidden pt-10 flex justify-between items-center relative left-0 right-0 top-[calc(100%+1rem)] space-x-1"
@@ -257,27 +229,12 @@ onBeforeUnmount(() => {
     </div>
   </div>
 </template>
+
 <style>
 @media (max-width: 640px) {
   img {
     height: 50vh;
     width: auto;
-  }
-  .group {
-    width: calc(100% - 16px);
-    height: 400px;
-    padding: 16px;
-    padding-top: 40px;
-  }
-  button {
-    padding: 12px 24px;
-    font-size: 1rem;
-    margin-top: 8px;
-  }
-  .lg:hidden button {
-    padding: 12px;
-    font-size: 0.875rem;
-    margin: 8px;
   }
 }
 </style>
