@@ -29,7 +29,7 @@ const open = (modal) => {
   setTimeout(() => {
     openLogin.value = false;
     openRegister.value = false;
-  }, 60000);
+  }, 120000);
 };
 
 const auth = useAuthStore();

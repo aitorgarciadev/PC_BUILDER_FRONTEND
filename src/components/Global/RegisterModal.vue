@@ -1,78 +1,81 @@
 <script setup>
 import { ref } from "vue";
 import { useAuthStore } from "../../stores/auth";
-
-const password = ref("");
-const passwordAgain = ref("");
-const email = ref("");
-const textAlert = ref("");
+import "@material-tailwind/html/scripts/popover.js";
+import { useRouter } from "vue-router";
 
 const store = useAuthStore();
+const router = useRouter();
 
-async function register() {
-  if (password.value !== "" && email.value !== "") {
-    if (password.value === passwordAgain.value) {
-      try {
-        const response = await store.register(email.value, password.value);
+const username = ref("");
+const password = ref("");
+const textAlert = ref("");
 
-        if (response.id) {
-          store.user.id = response["id"];
-          store.user.email = email.value;
-          store.user.role = response["role"];
-          store.user.isAuthenticated = true;
-          store.user.access_token = response["access_token"];
-          store.user.refresh_token = response["refresh_token"];
+async function login() {
+  if (username.value != "" && password.value != "")
+    try {
+      const response = await store.login(username.value, password.value);
 
-          localStorage.setItem("id", response["id"]);
-          localStorage.setItem("email", email.value);
-          localStorage.setItem("role", response["role"]);
-          localStorage.setItem("isAuthenticated", "true");
-          localStorage.setItem("access_token", response["access_token"]);
-          localStorage.setItem("refresh_token", response["refresh_token"]);
+      if (response.id) {
+        store.user.id = response["id"];
+        store.user.email = username.value;
+        store.user.role = response["role"];
+        store.user.isAuthenticated = true;
+        store.user.access_token = response["access_token"];
+        store.user.refresh_token = response["refresh_token"];
 
-          textAlert.value = "";
-          password.value = "";
-          passwordAgain.value = "";
-          email.value = "";
-        } else {
-          textAlert.value = "The email already exists!";
+        localStorage.setItem("id", response["id"]);
+        localStorage.setItem("email", username.value);
+        localStorage.setItem("role", response["role"]);
+        localStorage.setItem("isAuthenticated", "true");
+        localStorage.setItem("access_token", response["access_token"]);
+        localStorage.setItem("refresh_token", response["refresh_token"]);
+
+        username.value = "";
+        password.value = "";
+        textAlert.value = "";
+
+        if (response["role"] == "ADMIN") {
+          router.push("/admin/products");
         }
-      } catch (error) {
-        textAlert.value = "Error trying to register, please try again.";
-      }
-    } else {
-      textAlert.value = "Passwords do not match!";
+      } else textAlert.value = "Incorrect username or password!";
+    } catch (error) {
+      textAlert.value = "Error trying to login, please try again.";
     }
-  } else {
-    textAlert.value = "Email, or password cannot be null!";
-  }
+  else textAlert.value = "User or Password not by null!";
 }
 </script>
+
 <template>
-  <div class="flex">
+  <div class="flex justify-center items-center min-h-screen">
     <div
-      class="relative flex h-auto max-w-md flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-white border-2 rounded-xl border-gray-300/30 shadow-md"
+      class="relative flex flex-col w-full max-w-lg px-6 py-12 bg-gray-950 border-2 border-gray-300/30 rounded-xl shadow-md lg:px-8 lg:py-20"
     >
-      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+      <div class="flex justify-center mb-10 space-x-4">
         <img
-          class="mx-auto h-15 w-auto"
-          src="../assets/img/logos/BlueLogo.svg"
+          class="h-32 w-32 ml-16 object-contain"
+          src="/src/assets/img/logo/LOGO-IMG.svg"
+          alt="Your Company"
+        />
+        <img
+          class="h-32 w-32 mr-16 object-contain"
+          src="/src/assets/img/logo/LOGO-TXT.svg"
           alt="Your Company"
         />
       </div>
 
-      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form class="space-y-6" @submit.prevent="register">
+      <div class="w-full sm:max-w-sm mx-auto">
+        <form class="space-y-6" @submit.prevent="login">
           <div>
             <div class="mt-2">
               <input
-                v-model="email"
+                v-model="username"
                 id="email"
                 name="email"
                 type="email"
                 autocomplete="email"
                 placeholder="Email"
-                class="block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-blueFunko-500 focus:ring-blueFunko-300 sm:text-sm sm:leading-6"
+                class="block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder-gray-500 focus:ring-2 focus:ring-inset focus:ring-yellow-300 focus:outline-none sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -86,66 +89,30 @@ async function register() {
                 type="password"
                 autocomplete="current-password"
                 placeholder="Password"
-                class="block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-blueFunko-500 focus:ring-blueFunko-300 sm:text-sm sm:leading-6"
+                class="block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder-gray-500 focus:ring-2 focus:ring-inset focus:ring-yellow-300 focus:outline-none sm:text-sm sm:leading-6"
               />
             </div>
-          </div>
-
-          <div>
-            <div class="mt-2">
-              <input
-                v-model="passwordAgain"
-                id="confirmPassword"
-                name="confirmPassword"
-                type="password"
-                autocomplete="current-password"
-                placeholder="Confirm Password"
-                class="block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-blueFunko-500 focus:ring-blueFunko-300 sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-
-          <div
-            v-if="textAlert != ''"
-            class="mt-4 font-regular relative block w-full rounded-lg bg-pink-500 p-4 text-base leading-5 text-white opacity-100"
-            data-dismissible="alert"
-          >
-            <div class="mr-12">{{ textAlert }}</div>
           </div>
 
           <div>
             <button
               type="submit"
-              class="flex w-full justify-center rounded-md bg-blueFunko-700 px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blueFunko-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blueFunko-800 easy-in-out duration-150 hover:scale-105 hover:delay-150"
+              class="flex w-full justify-center rounded-md bg-yellow-500 px-3 py-2 text-md font-semibold leading-6 text-black shadow-sm hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-800 transition duration-150 transform hover:scale-105"
             >
               Sign up
             </button>
           </div>
-        </form>
-        <!-- <p class="text-sm text-center mt-10 text-gray-400">——— Or Connect With ———</p>
 
-        <div class="flex justify-center w-full items-center mb-5">
-          <button class="border-2 border-black/30 rounded-lg mt-6 py-2 px-12 hover:bg-gray-50">
-            <img src="../assets/img/logos/GoogleLogo.svg" alt="" />
-          </button>
-        </div> -->
+          <div
+            v-if="textAlert != ''"
+            class="mt-4 relative block w-full rounded-lg bg-red-500 p-4 text-base leading-5 text-white opacity-100"
+          >
+            <div class="mr-12">{{ textAlert }}</div>
+          </div>
+        </form>
       </div>
-      <img
-        src="../assets/img/details/PointShape.svg"
-        alt=""
-        class="w-10 absolute bottom-1 left-1"
-      />
-      <img
-        src="../assets/img/details/PointShape.svg"
-        alt=""
-        class="w-10 absolute top-1 right-1"
-      />
     </div>
   </div>
 </template>
 
-<style>
-body {
-  background-color: #f7f8fa;
-}
-</style>
+<style></style>

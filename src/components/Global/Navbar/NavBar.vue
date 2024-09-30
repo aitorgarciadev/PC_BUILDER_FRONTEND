@@ -280,11 +280,11 @@ const open = ref(false);
 
             <div class="ml-auto flex items-center">
               <LanguageSelector />
-              <div class="ml-4 flow-root lg:ml-4 bg-white rounded-md">
-                <ShoppingCart />
-              </div>
               <div class="ml-4 flow-root lg:ml-4 text-white">
                 <ProfileMenu />
+              </div>
+              <div class="ml-4 flow-root lg:ml-4 bg-white rounded-md">
+                <ShoppingCart />
               </div>
             </div>
           </div>
