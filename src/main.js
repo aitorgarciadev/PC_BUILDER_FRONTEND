@@ -1,12 +1,17 @@
+import "/src/assets/main.css";
+import "tailwindcss/tailwind.css";
+
 import { createApp } from "vue";
-import "./index.css";
-import App from "./App.vue";
-
 import { createPinia } from "pinia";
+import i18n from "/src/language/language.js";
 
-const pinia = createPinia();
+import App from "./App.vue";
+import router from "./router";
 
 const app = createApp(App);
 
-app.use(pinia);
-createApp(App).mount("#app");
+app.use(createPinia());
+app.use(i18n);
+app.use(router);
+
+app.mount("#app");

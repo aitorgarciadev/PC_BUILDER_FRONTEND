@@ -4,10 +4,6 @@
   <section
     class="mx-auto mt-10 grid max-w-[1200px] grid-cols-2 px-5 lg:grid-cols-3 lg:gap-5"
   >
-    <!-- 1 -->
-
-    <!-- 2 -->
-
     <a href="#">
       <div class="relative cursor-pointer">
         <img
@@ -24,8 +20,6 @@
       </div>
     </a>
 
-    <!-- 3  -->
-
     <a href="#">
       <div class="relative cursor-pointer">
         <img
@@ -41,8 +35,6 @@
         </p>
       </div>
     </a>
-
-    <!-- 4 -->
 
     <a href="#">
       <div class="relative cursor-pointer">
@@ -76,8 +68,6 @@
       </div>
     </a>
 
-    <!-- 5  -->
-
     <a href="#">
       <div class="relative cursor-pointer">
         <img
@@ -93,8 +83,6 @@
         </p>
       </div>
     </a>
-
-    <!-- 6 -->
 
     <a href="#">
       <div class="relative cursor-pointer">

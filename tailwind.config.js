@@ -1,25 +1,38 @@
 /** @type {import('tailwindcss').Config} */
+
+import aspectRatio from "@tailwindcss/aspect-ratio";
+import forms from "@tailwindcss/forms";
+
 export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {},
       variants: {},
-
       fontFamily: {
-        gloria: ["Gloria Hallelujah", "cursive"],
-        nunito: ["Nunito", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        "open-sans": ["Open Sans", "sans-serif"],
       },
-
       colors: {
-        dark: "#131313",
-        secondary: "#99e1d9",
-        light: "#fcfcfc",
-        primary: "#70abaf",
-        terciary: "#705d56",
-        navy: "#c518bd",
+        blue: {
+          50: "#edfbff",
+          100: "#d6f4ff",
+          200: "#b6edff",
+          300: "#83e4ff",
+          400: "#49d2ff",
+          500: "#1fb5ff",
+          600: "#0798ff",
+          700: "#017ced",
+          800: "#0865c5",
+          900: "#0e569a",
+          950: "#0e345d",
+        },
+        dark: {
+          50: "#0A0A0A",
+        },
       },
     },
-    plugins: [require("@tailwindcss/aspect-ratio")],
+    plugins: [aspectRatio, forms],
   },
 };

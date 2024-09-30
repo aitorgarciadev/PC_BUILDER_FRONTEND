@@ -1,9 +1,9 @@
 <template>
   <section
-    class="container mt-10 mx-auto my-8 flex flex-col justify-center gap-3 lg:flex-row"
+    class="container mx-auto my-8 flex flex-col pt-10 mb-20 justify-center gap-3 lg:flex-row sw-full"
   >
     <div
-      class="mx-5 flex flex-row items-center justify-center border-2 border-yellow-400 py-4 px-5"
+      class="mx-5 flex flex-row items-center justify-center border-2 rounded-md border-gray-950 bg-gray-950 text-white py-6 px-7"
     >
       <div class="">
         <svg
@@ -12,7 +12,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="h-6 w-6 text-violet-900 lg:mr-2"
+          class="h-6 w-6 text-yellow-400 lg:mr-2"
         >
           <path
             stroke-linecap="round"
@@ -23,19 +23,15 @@
       </div>
 
       <div class="ml-6 flex flex-col justify-center">
-        <h3 class="text-left mt-4 text-xs font-bold lg:text-sm">
-          Free Delivery
-        </h3>
+        <h3 class="text-left text-xs font-bold lg:text-sm">Free Delivery</h3>
         <p class="text-light text-center text-xs lg:text-left lg:text-sm">
           Orders from $200
         </p>
       </div>
     </div>
 
-    <!-- 2 -->
-
     <div
-      class="mx-5 flex flex-row items-center justify-center border-2 border-yellow-400 py-4 px-5"
+      class="mx-5 flex flex-row items-center justify-center border-2 rounded-md border-gray-950 bg-gray-950 text-white py-6 px-7"
     >
       <div class="">
         <svg
@@ -44,7 +40,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="h-6 w-6 text-violet-900 lg:mr-2"
+          class="h-6 w-6 text-yellow-400 lg:mr-2"
         >
           <path
             stroke-linecap="round"
@@ -55,17 +51,13 @@
       </div>
 
       <div class="ml-6 flex flex-col justify-center">
-        <h3 class="text-left mt-4 text-xs font-bold lg:text-sm">
-          Money returns
-        </h3>
+        <h3 class="text-left text-xs font-bold lg:text-sm">Money returns</h3>
         <p class="text-light text-left text-xs lg:text-sm">30 Days guarantee</p>
       </div>
     </div>
 
-    <!-- 3 -->
-
     <div
-      class="mx-5 flex flex-row items-center justify-center border-2 border-yellow-400 py-4 px-5"
+      class="mx-5 flex flex-row items-center justify-center border-2 rounded-md border-gray-900 bg-gray-950 text-white py-6 px-7"
     >
       <div class="">
         <svg
@@ -74,7 +66,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="h-6 w-6 text-violet-900 lg:mr-2"
+          class="h-6 w-6 text-yellow-400 lg:mr-2"
         >
           <path
             stroke-linecap="round"
@@ -85,9 +77,7 @@
       </div>
 
       <div class="ml-6 flex flex-col justify-center">
-        <h3 class="text-left mt-4 text-xs font-bold lg:text-sm">
-          24/7 Supports
-        </h3>
+        <h3 class="text-left text-xs font-bold lg:text-sm">24/7 Supports</h3>
         <p class="text-light text-left text-xs lg:text-sm">Consumer support</p>
       </div>
     </div>

@@ -1,9 +1,9 @@
 <template>
-  <footer class="h-11 bg-amber-400 mt-20">
+  <footer class="h-11 bg-black text-white text-center pb-6 pt-2">
     <div
-      class="mx-auto flex max-w-[1200px] items-center justify-between px-4 pt-2"
+      class="mx-auto flex max-w-[1200px] items-center text-center justify-between"
     >
-      <p>&copy; Bogdan Bulakh, 2023</p>
+      <p class="text-center flex">&copy; Bogdan Bulakh, 2023</p>
       <div class="flex items-center space-x-3">
         <img
           class="h-8"
@@ -16,7 +16,7 @@
           alt="AE icon"
         />
         <img
-          class="h-8"
+          class="h-8 bg-white"
           src="https://cdn-icons-png.flaticon.com/512/5968/5968144.png"
           alt="Apple pay icon"
         />
