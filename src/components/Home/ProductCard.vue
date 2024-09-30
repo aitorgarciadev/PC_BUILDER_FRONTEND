@@ -35,7 +35,7 @@ const props = defineProps({
       <p class="text-md font-medium text-gray-900">{{ product.price }}</p>
     </div>
     <button
-      class="mt-4 w-full bg-gray-900 text-white font-bold py-2 px-4 rounded hover:bg-gray-700 transition duration-300 text-center"
+      class="mt-4 w-full bg-gray-900 text-white font-bold py-2 px-4 rounded transition duration-300 text-center hover:bg-gray-700 relative z-10"
     >
       Comprar
     </button>
@@ -49,13 +49,6 @@ const props = defineProps({
   padding: 16px;
   padding-top: 40px;
   background-color: white;
-}
-
-button {
-  padding: 12px 24px;
-  font-size: 1rem;
-  margin-top: 8px;
-  width: 100%;
 }
 
 @media (min-width: 640px) {
