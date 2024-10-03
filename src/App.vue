@@ -1,3 +1,7 @@
+<script setup>
+import NavBar from "./components/Global/Navbar/NavBar.vue";
+</script>
+
 <template>
   <div id="app">
     <header>
@@ -7,15 +11,8 @@
   </div>
 </template>
 
-<script setup>
-import NavBar from "./components/Global/Navbar/NavBar.vue";
-</script>
-
 <style scoped>
-body {
-  background-color: black;
-}
-
-header {
+html {
+  scroll-behavior: auto;
 }
 </style>

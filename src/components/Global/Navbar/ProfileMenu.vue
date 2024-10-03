@@ -12,8 +12,8 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/vue";
-import LoginModal from "../LoginModal.vue";
-import RegisterModal from "../RegisterModal.vue";
+import LoginModal from "../../Global/Auth/LoginModal.vue";
+import RegisterModal from "../../Global/Auth/RegisterModal.vue";
 import { useI18n } from "vue-i18n";
 import { UserIcon } from "@heroicons/vue/24/outline";
 

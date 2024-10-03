@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import { useAuthStore } from "../../stores/auth";
+import { useAuthStore } from "../../../stores/auth";
 import "@material-tailwind/html/scripts/popover.js";
 import { useRouter } from "vue-router";
 
@@ -99,7 +99,7 @@ async function login() {
               type="submit"
               class="flex w-full justify-center rounded-md bg-yellow-500 px-3 py-2 text-md font-semibold leading-6 text-black shadow-sm hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-800 transition duration-150 transform hover:scale-105"
             >
-              Sign up
+              Sign in
             </button>
           </div>
 
