@@ -96,7 +96,7 @@ btn:hover {
 
 /* Ocultar el botón con animación */
 .fade-out {
-  opacity: 0; /* Totalmente oculto */
+  opacity: 0.1; /* Totalmente oculto */
   transform: translateY(20px); /* Desplazado hacia abajo */
 }
 

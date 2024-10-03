@@ -1,6 +1,6 @@
 <template>
   <!-- Carousel siempre visible y sin efectos de scroll -->
-  <Carousel id="scrollBtn" />
+  <Carousel />
 
   <section id="BannerSection" class="section">
     <NewsLetter />
