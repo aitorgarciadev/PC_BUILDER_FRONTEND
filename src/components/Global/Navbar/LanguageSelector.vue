@@ -14,8 +14,8 @@ const changeLanguage = (lang) => {
 };
 
 const languages = [
-  { code: "es", flag: ESFlag, label: "Spanish" },
-  { code: "en", flag: GBFlag, label: "English" },
+  { code: "es", flag: ESFlag },
+  { code: "en", flag: GBFlag },
 ];
 
 const filteredLanguages = computed(() => {
@@ -50,9 +50,9 @@ const filteredLanguages = computed(() => {
       leave-to-class="transform opacity-0 scale-95"
     >
       <MenuItems
-        class="absolute right-0 z-10 mt-2 w-15 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        class="absolute right-0 z-10 mt-2 w-18 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
       >
-        <div class="py-1 hover:bg-gray-300 rounded-md hover:cursor-pointer">
+        <div class="py-1">
           <MenuItem
             v-for="lang in filteredLanguages"
             :key="lang.code"
@@ -62,10 +62,14 @@ const filteredLanguages = computed(() => {
               @click.prevent="changeLanguage(lang.code)"
               :class="[
                 active ? 'bg-gray-300 text-gray-900' : 'text-gray-700',
-                'block px-4 py-1 text-sm',
+                ' px-4 py-1 text-sm w-full flex items-center space-x-2',
               ]"
             >
-              <img :src="lang.flag" :alt="lang.label + ' flag'" />
+              <img
+                :src="lang.flag"
+                :alt="lang.label + ' flag'"
+                class="h-5 w-5"
+              />
             </a>
           </MenuItem>
         </div>
@@ -73,3 +77,11 @@ const filteredLanguages = computed(() => {
     </transition>
   </Menu>
 </template>
+
+<style scoped>
+/* Asegúrate de que el dropdown se ajuste correctamente al contenido */
+.menu-items {
+  max-width: 10px; /* Ajusta según sea necesario */
+  min-width: 10px; /* Ancho mínimo adecuado */
+}
+</style>

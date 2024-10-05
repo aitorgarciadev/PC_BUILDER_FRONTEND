@@ -87,6 +87,7 @@ btn {
 }
 btn:hover {
   cursor: pointer;
+  opacity: 1; /* Totalmente visible */
 }
 /* Mostrar el botón con animación */
 .fade-in {

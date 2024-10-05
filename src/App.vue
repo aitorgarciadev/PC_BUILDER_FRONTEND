@@ -6,7 +6,7 @@ const route = useRoute();
 </script>
 
 <template>
-  <header>
+  <header id="scrollBtn">
     <NavBar />
   </header>
   <div class="wrapper"></div>

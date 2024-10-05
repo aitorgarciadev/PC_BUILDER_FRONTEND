@@ -2,15 +2,8 @@
   <!-- Carousel siempre visible y sin efectos de scroll -->
   <Carousel />
 
-  <section id="BannerSection" class="section">
-    <NewsLetter />
-  </section>
-  <section id="StoreFeaturesSection" class="section">
-    <StoreFeatures class="store-features" />
-  </section>
-
-  <section id="ProductsCarouselSection" class="section">
-    <ProductsCarousel />
+  <section id="AboutUsSection" class="section">
+    <AboutUs />
   </section>
 
   <section id="BlogSection" class="section">
@@ -26,9 +19,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import Carousel from "../components/Home/Carousel.vue";
-import StoreFeatures from "../components/Home/StoreFeatures.vue";
-import NewsLetter from "../components/Global/NewsLetter.vue";
-import ProductsCarousel from "../components/Home/ProductsCarousel.vue";
+import AboutUs from "../components/AboutUs/AboutUs.vue";
 import FooterDiv from "../components/Global/FooterDiv.vue";
 import BlogSection from "../components/Home/BlogSection.vue";
 import UpBTN from "../components/Global/UpBTN.vue";

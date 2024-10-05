@@ -1,26 +1,101 @@
 <template>
-  <footer class="h-11 bg-black text-white text-center pb-6 pt-2">
-    <div
-      class="mx-auto flex max-w-[1200px] items-center text-center justify-between"
-    >
-      <p class="text-center flex">&copy; Bogdan Bulakh, 2023</p>
-      <div class="flex items-center space-x-3">
-        <img
-          class="h-8"
-          src="https://cdn-icons-png.flaticon.com/512/5968/5968299.png"
-          alt="Visa icon"
+  <footer class="bg-gray-950 py-12 px-8 font-sans tracking-wide">
+    <div class="grid max-sm:grid-cols-1 lg:grid-cols-3 items-center gap-8">
+      <h2 class="lg:col-span-2 text-xl font-semibold text-gray-300">
+        Join our newsletter to keep up to date with us!<br />
+      </h2>
+      <div
+        class="bg-transparent border border-gray-800 flex px-1 py-1 rounded-full"
+      >
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="w-full outline-none bg-transparent pl-4 text-sm text-gray-300"
         />
-        <img
-          class="h-8"
-          src="https://cdn-icons-png.flaticon.com/512/349/349228.png"
-          alt="AE icon"
-        />
-        <img
-          class="h-8 bg-white"
-          src="https://cdn-icons-png.flaticon.com/512/5968/5968144.png"
-          alt="Apple pay icon"
-        />
+        <button
+          type="button"
+          class="bg-gray-600 hover:bg-yellow-700 transition-all text-gray-200 text-sm rounded-full px-5 py-2.5"
+        >
+          Subscribe
+        </button>
       </div>
     </div>
+
+    <hr class="my-12 border-gray-800" />
+
+    <div
+      class="grid max-sm:grid-cols-1 max-lg:grid-cols-2 lg:grid-cols-5 lg:gap-20 max-lg:gap-8"
+    >
+      <div class="lg:col-span-3 max-lg:col-span-full">
+        <a href="javascript:void(0)"
+          ><img
+            src="../../assets/img/logo/LOGO-IMG.svg"
+            alt="logo"
+            class="w-10"
+        /></a>
+        <p class="text-gray-300 text-sm lg:max-w-sm mt-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+          gravida, mi eu pulvinar cursus, sem elit interdum mauris.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-gray-300">About us</h4>
+        <ul class="space-y-4">
+          <li>
+            <a
+              href="javascript:void(0)"
+              class="text-gray-300 hover:text-gray-200 text-sm"
+              >Web Development</a
+            >
+          </li>
+          <li>
+            <a
+              href="javascript:void(0)"
+              class="text-gray-300 hover:text-gray-200 text-sm"
+              >Mobile App Development</a
+            >
+          </li>
+          <li>
+            <a
+              href="javascript:void(0)"
+              class="text-gray-300 hover:text-gray-200 text-sm"
+              >UI/UX Design</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-gray-300">Contact</h4>
+        <ul class="space-y-4">
+          <li>
+            <a
+              href="javascript:void(0)"
+              class="text-gray-300 hover:text-gray-200 text-sm"
+              >Github</a
+            >
+          </li>
+          <li>
+            <a
+              href="javascript:void(0)"
+              class="text-gray-300 hover:text-gray-200 text-sm"
+              >Linkedin</a
+            >
+          </li>
+          <li>
+            <a
+              href="javascript:void(0)"
+              class="text-gray-300 hover:text-gray-200 text-sm"
+              >Email</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="text-sm text-gray-300 mt-8">
+      © ReadymadeUI. All rights reserved.
+    </p>
   </footer>
 </template>

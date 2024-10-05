@@ -97,4 +97,8 @@ onBeforeUnmount(() => {
   opacity: 1; /* Cuando está visible, mostrarlo */
   transform: translateY(0); /* Volver a la posición original */
 }
+
+html {
+  scroll-behavior: smooth;
+}
 </style>

@@ -1,4 +1,4 @@
-<!-- <script setup>
+<script setup>
 import { ref, computed } from "vue";
 import { logoutStore } from "../../../stores/logout";
 import { useAuthStore } from "../../../stores/auth";
@@ -241,4 +241,4 @@ const closeModal = (modal) => {
       </Menu>
     </div>
   </div>
-</template> -->
+</template>
