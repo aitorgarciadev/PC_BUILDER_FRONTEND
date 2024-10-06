@@ -96,9 +96,7 @@ onUnmounted(() => {
         @click="openModal"
       />
     </div>
-    <div>
-      <ReviewIcon />
-    </div>
+    <div></div>
     <div class="p-3">
       <p class="text-slate-600 leading-normal font-light text-xs">
         {{ product.category?.name || "Category" }}

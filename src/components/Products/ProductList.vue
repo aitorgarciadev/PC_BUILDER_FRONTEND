@@ -100,7 +100,7 @@ const goToPage = (page) => {
       <button
         @click="goToPage(currentPage - 1)"
         :disabled="currentPage === 0"
-        class="rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blue-900 hover:border-blue-900 focus:text-white focus:bg-blue-900 focus:border-blue-900 active:border-blue-900 active:text-white active:bg-blue-900 disabled:pointer-events-none disabled:opacity-50"
+        class="rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-gray-900 hover:gray-blue-900 focus:text-white focus:bg-gray-900 focus:border-gray-900 active:border-gray-900 active:text-white active:bg-gray-900 disabled:pointer-events-none disabled:opacity-50"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ const goToPage = (page) => {
         :key="page"
         @click="goToPage(page - 1)"
         :disabled="page - 1 === currentPage"
-        class="min-w-9 rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blue-900 hover:border-blue-900 focus:text-white focus:bg-blue-900 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:bg-blue-900 disabled:text-white"
+        class="min-w-9 rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-gray-900 hover:border-gray-900 focus:text-white focus:bg-gray-900 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:bg-gray-900 disabled:text-white"
       >
         {{ page }}
       </button>
@@ -131,7 +131,7 @@ const goToPage = (page) => {
       <button
         @click="goToPage(currentPage + 1)"
         :disabled="currentPage + 1 >= totalPages"
-        class="rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blue-900 hover:border-bg-blue-900 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-blue-600 disabled:pointer-events-none disabled:opacity-50"
+        class="rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-gray-900 hover:border-bg-blue-900 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-gray-600 disabled:pointer-events-none disabled:opacity-50"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

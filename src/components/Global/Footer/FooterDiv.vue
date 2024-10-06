@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-950 py-12 px-8 font-sans tracking-wide">
+  <footer class="bg-gray-950 py-12 px-8 font-sans tracking-wide mt-20">
     <div class="grid max-sm:grid-cols-1 lg:grid-cols-3 items-center gap-8">
       <h2 class="lg:col-span-2 text-xl font-semibold text-gray-300">
         Join our newsletter to keep up to date with us!<br />

@@ -27,7 +27,7 @@
 import { onMounted, ref } from "vue";
 import Carousel from "../components/Home/BannerCarousel.vue";
 import StoreFeatures from "../components/Home/StoreFeatures.vue";
-import NewsLetter from "../components/Global/NewsLetter.vue";
+import NewsLetter from "../components/Global/ExclusiveOffersSection.vue";
 import ProductsCarousel from "../components/Home/ProductsCarousel.vue";
 import FooterDiv from "../components/Global/Footer/FooterDiv.vue";
 import BlogSection from "../components/Home/BlogSection.vue";

@@ -3,37 +3,42 @@ const posts = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1603798125914-7b5d27789248?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Boost your conversion rate",
+      "https://img.freepik.com/premium-vector/computer-with-neon-lights-computer-with-neon-lights-laptop-with-neon-light-black-background_912214-47900.jpg",
+    title: "How to pick the best components",
     href: "#",
     description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+      "In this blog post, we guide you through the process of selecting the right components for your PC build. We cover the key factors to consider, such as compatibility between parts, performance requirements based on your usage (gaming, editing, or general tasks), and budget management. By breaking down each component category, from CPUs and GPUs to RAM and storage, this post will help you make informed decisions and build a system that meets your specific needs.",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
-    category: { title: "Marketing", href: "#" },
+    category: { title: "Components", href: "#" },
   },
   {
     id: 2,
-    title: "Boost your conversion rate",
+    image:
+      "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/f519e7c6-4de8-43a7-9562-9b9cf5ebada1/0fccc758-58cf-4d18-b9fc-a90a3da56ba0.png",
+    title: "Upgrade your build to another level",
     href: "#",
     description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+      "In this blog post, we explore the exciting world of upgrading your PC build to take your performance to the next level. Whether you're looking to enhance gaming experiences, speed up content creation, or improve multitasking capabilities, we provide actionable tips and insights. Learn about the most impactful upgrades, such as adding more RAM, switching to a solid-state drive (SSD) for faster load times, or upgrading your graphics card for stunning visuals. We also discuss the importance of optimizing cooling solutions and power supplies to support your new components. With our expert advice, you'll be equipped to make informed choices that transform your setup into a powerhouse of performance and efficiency.",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
-    category: { title: "Marketing", href: "#" },
+    category: { title: "Builds", href: "#" },
   },
   {
     id: 3,
-    title: "Boost your conversion rate",
+    image:
+      "https://i.pinimg.com/1200x/a5/28/74/a52874a5cb8dc3d5a2f245f00fa56874.jpg",
+    title: "Our recommendations",
     href: "#",
     description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+      "In this blog post, we provide general recommendations to enhance your overall tech setup. Whether you're building a PC, upgrading peripherals, or optimizing your workspace, we've got you covered. From high-performance components to ergonomic chairs and high-quality monitors, we suggest products that improve both productivity and comfort. We also recommend essential accessories, like mechanical keyboards, precision mice, and advanced cooling solutions. Whether you're a gamer, creative professional, or working from home, our curated list ensures you have the tools to create an efficient, powerful, and enjoyable environment for all your tasks.",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
-    category: { title: "Marketing", href: "#" },
+    category: { title: "Components", href: "#" },
   },
 ];
 </script>
+
 <template>
   <div class="bg-white pt-20 pb-20">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -42,7 +47,7 @@ const posts = [
           From the blog
         </h2>
         <p class="mt-2 text-lg leading-8 text-gray-600 pb-20">
-          Learn how to grow your business with our expert advice.
+          Learn how to do your build with our expert advice.
         </p>
       </div>
       <div
@@ -57,7 +62,7 @@ const posts = [
             class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-2xl bg-gray-200 lg:aspect-none group-hover:opacity-85 lg:h-80"
           >
             <img
-              src="https://images.unsplash.com/photo-1603798125914-7b5d27789248?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              :src="post.image"
               alt="product.imageAlt"
               class="h-full w-full object-cover object-center lg:h-full lg:w-full transform transition duration-500 ease-in-out hover:scale-110"
             />

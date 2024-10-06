@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { useProductService } from "./productService";
+import { useProductService } from "./ProductService";
 
 export const useProductStore = defineStore("productStore", () => {
   const productService = useProductService();

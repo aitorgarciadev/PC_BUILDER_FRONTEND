@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watch, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
-import { useProductStore } from "../../../stores/product/productStore";
+import { useProductStore } from "../../../stores/productStore";
 import { SpeechRecognitionService } from "../../../core/apis/SpeechRecognition";
 
 const searchQuery = ref("");

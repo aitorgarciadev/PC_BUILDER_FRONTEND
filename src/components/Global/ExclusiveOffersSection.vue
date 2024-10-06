@@ -25,14 +25,14 @@
           ACCENT CHAIRS, <br />
           TABLES & OTTOMANS
         </p>
-        <button
-          href="#"
-          class="mt-6 bg-amber-400 px-4 py-2 duration-100 rounded-md hover:bg-yellow-300 animate-item"
-        >
-          Shop now
-        </button>
+        <RouterLink to="/products">
+          <button
+            class="mt-6 bg-amber-400 px-4 py-2 duration-100 rounded-md hover:bg-yellow-300 animate-item"
+          >
+            Shop now
+          </button>
+        </RouterLink>
       </div>
-
       <img
         class="-mr-5 hidden w-[550px] object-cover md:block rounded-md animate-item"
         src="https://images.unsplash.com/photo-1609815697866-033945af9797?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
