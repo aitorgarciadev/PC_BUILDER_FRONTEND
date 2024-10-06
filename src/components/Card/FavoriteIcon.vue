@@ -74,7 +74,7 @@ const openLoginModal = () => {
       'heart-button',
       {
         'text-red-500': isFavorite, // Si es favorito, el corazón es rojo
-        'text-gray-400': !isFavorite, // Si no es favorito, el corazón es gris
+        'text-gray-500': !isFavorite, // Si no es favorito, el corazón es gris
         pulsing: isPulsing, // Aplica animación de pulsación si está activado
       },
     ]"

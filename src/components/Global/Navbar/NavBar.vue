@@ -52,7 +52,7 @@
             <div
               class="ml-4 flex lg:ml-0 items-center space-x-2 hover:brightness-75"
             >
-              <RouterLink to="/">
+              <RouterLink to="/" class="hidden md:block">
                 <span class="sr-only">PC-BUILDER</span>
                 <div class="flex space-x-2">
                   <img
@@ -86,7 +86,12 @@
             </div>
 
             <div class="ml-auto flex items-center">
-              <LanguageSelector />
+              <div class="ml-4 text-white">
+                <SearchButton />
+              </div>
+              <div class="ml-4 text-white">
+                <LanguageSelector />
+              </div>
               <div class="ml-4 text-white">
                 <ProfileMenu />
               </div>
@@ -107,6 +112,7 @@ import { useI18n } from "vue-i18n";
 import ShoppingCart from "../ShoppingCart/ShoppingCart.vue";
 import ProfileMenu from "./ProfileMenu.vue";
 import LanguageSelector from "./LanguageSelector.vue";
+import SearchButton from "./SearchButton.vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 
 const open = ref(false);

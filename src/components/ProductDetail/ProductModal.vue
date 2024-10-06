@@ -165,32 +165,7 @@ const addToCart = () => {
 
                     <section aria-labelledby="information-heading">
                       <div class="py-4">
-                        <h4 class="sr-only">Reviews</h4>
-                        <div class="flex items-center">
-                          <div class="flex items-center">
-                            <StarIcon
-                              v-for="rating in 5"
-                              :key="rating"
-                              :class="{
-                                'text-gray-900':
-                                  (props.product.rating || 0) >= rating,
-                                'text-gray-200':
-                                  (props.product.rating || 0) < rating,
-                                'h-5 w-5 flex-shrink-0': true,
-                              }"
-                              aria-hidden="true"
-                            />
-                          </div>
-                          <p class="sr-only">
-                            {{ props.product.rating || 0 }} out of 5 stars
-                          </p>
-                          <a
-                            href="#"
-                            class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
-                          >
-                            {{ props.product.reviewCount || 0 }} reviews
-                          </a>
-                        </div>
+                        <div class="flex items-center"></div>
                       </div>
                       <p
                         v-if="props.product.discount > 0"
@@ -266,7 +241,7 @@ const addToCart = () => {
                         <button
                           type="button"
                           @click="addToCart"
-                          class="w-full rounded-md border border-transparent bg-blueFunko-700 px-4 py-2 text-base font-medium text-white transition-all hover:bg-blueFunko-600 focus:outline-none"
+                          class="w-full rounded-md border border-transparent bg-gray-950 px-4 py-2 text-base font-medium text-white transition-all hover:bg-gray-800 focus:outline-none"
                         >
                           {{ t("addToCart") }}
                         </button>

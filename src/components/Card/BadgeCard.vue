@@ -12,7 +12,7 @@ const props = defineProps({
 
 <template>
   <div
-    class="rounded-xl px-2.5 border border-transparent text-md flex items-center text-white transition-all shadow-sm"
+    class="rounded-md px-2.5 border border-transparent text-md flex items-center text-white transition-all shadow-sm"
     :class="
       stock > 0
         ? props.isDiscount

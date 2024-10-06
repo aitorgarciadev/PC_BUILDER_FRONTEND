@@ -27,15 +27,23 @@
       class="grid max-sm:grid-cols-1 max-lg:grid-cols-2 lg:grid-cols-5 lg:gap-20 max-lg:gap-8"
     >
       <div class="lg:col-span-3 max-lg:col-span-full">
-        <a href="javascript:void(0)"
-          ><img
+        <a href="javascript:void(0)" class="flex space-x-4">
+          <!-- Primera imagen -->
+          <img
             src="../../assets/img/logo/LOGO-IMG.svg"
             alt="logo"
-            class="w-10"
-        /></a>
+            class="w-16"
+          />
+          <!-- Segunda imagen (duplicada) -->
+          <img
+            src="../../assets/img/logo/LOGO-TXT.svg"
+            alt="logo"
+            class="w-40 mt-2"
+          />
+        </a>
         <p class="text-gray-300 text-sm lg:max-w-sm mt-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-          gravida, mi eu pulvinar cursus, sem elit interdum mauris.
+          High-quality components designed for performance and reliability,
+          tailored for enthusiasts and professionals.
         </p>
       </div>
 
@@ -94,8 +102,6 @@
       </div>
     </div>
 
-    <p class="text-sm text-gray-300 mt-8">
-      © ReadymadeUI. All rights reserved.
-    </p>
+    <p class="text-sm text-gray-300 mt-8">© PC-BUILDER. All rights reserved.</p>
   </footer>
 </template>

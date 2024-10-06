@@ -176,10 +176,13 @@ const removeFromCart = (id) => {
                     <p class="mt-0.5 text-sm text-gray-500">
                       Shipping and taxes calculated at checkout.
                     </p>
-                    <!-- <div class="mt-6">
-                      <a href="#"
-                        class="flex items-center justify-center rounded-md border border-transparent bg-blueFunko-700 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-blueFunko-800">Checkout</a>
-                    </div> -->
+                    <div class="mt-6">
+                      <a
+                        href="#"
+                        class="flex items-center justify-center rounded-md border border-transparent bg-gray-950 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-900"
+                        >Checkout</a
+                      >
+                    </div>
                     <div
                       class="mt-6 flex justify-center text-center text-sm text-gray-500"
                     >
@@ -187,7 +190,7 @@ const removeFromCart = (id) => {
                         or{{ " " }}
                         <button
                           type="button"
-                          class="font-medium text-blueFunko-500 hover:text-blueFunko-600"
+                          class="font-medium text-yellow-800 hover:text-yellow-950"
                           @click="open = false"
                         >
                           Continue Shopping
