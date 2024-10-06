@@ -12,11 +12,11 @@ const props = defineProps({
 
 <template>
   <div
-    class="rounded-md px-2.5 border border-transparent text-md flex items-center text-white transition-all shadow-sm"
+    class="rounded-md px-2.5 border border-transparent text-md flex items-center font-semibold transition-all shadow-sm"
     :class="
       stock > 0
         ? props.isDiscount
-          ? 'bg-red-500'
+          ? 'bg-yellow-400 font-semibold text-black'
           : props.isNew
           ? 'bg-blue-700'
           : 'bg-white'

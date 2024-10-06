@@ -30,6 +30,11 @@
                 {{ t("products") }}
               </a>
             </div>
+            <div class="flow-root">
+              <a href="/about" class="-m-2 block p-2 font-medium text-white">
+                {{ t("about") }}
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -80,6 +85,12 @@
                 class="flex items-center text-sm font-medium text-white hover:text-yellow-400"
               >
                 {{ t("products") }}
+              </a>
+              <a
+                href="/about"
+                class="flex items-center text-sm font-medium text-white hover:text-yellow-400"
+              >
+                {{ t("about") }}
               </a>
             </div>
 

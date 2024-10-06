@@ -64,7 +64,7 @@ const posts = [
             <img
               :src="post.image"
               alt="product.imageAlt"
-              class="h-full w-full object-cover object-center lg:h-full lg:w-full transform transition duration-500 ease-in-out hover:scale-110"
+              class="h-full w-full object-cover hover:cursor-pointer object-center lg:h-full lg:w-full transform transition duration-500 ease-in-out hover:scale-110"
             />
           </div>
           <div class="mt-3 flex items-center gap-x-4 text-xs">
