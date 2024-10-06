@@ -25,11 +25,11 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
-import Carousel from "../components/Home/Carousel.vue";
+import Carousel from "../components/Home/BannerCarousel.vue";
 import StoreFeatures from "../components/Home/StoreFeatures.vue";
 import NewsLetter from "../components/Global/NewsLetter.vue";
 import ProductsCarousel from "../components/Home/ProductsCarousel.vue";
-import FooterDiv from "../components/Global/FooterDiv.vue";
+import FooterDiv from "../components/Global/Footer/FooterDiv.vue";
 import BlogSection from "../components/Home/BlogSection.vue";
 import UpBTN from "../components/Global/UpBTN.vue";
 

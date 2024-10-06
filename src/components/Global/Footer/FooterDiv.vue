@@ -28,15 +28,13 @@
     >
       <div class="lg:col-span-3 max-lg:col-span-full">
         <a href="javascript:void(0)" class="flex space-x-4">
-          <!-- Primera imagen -->
           <img
-            src="../../assets/img/logo/LOGO-IMG.svg"
+            src="../../../assets/img/logo/LOGO-IMG.svg"
             alt="logo"
             class="w-16"
           />
-          <!-- Segunda imagen (duplicada) -->
           <img
-            src="../../assets/img/logo/LOGO-TXT.svg"
+            src="../../../assets/img/logo/LOGO-TXT.svg"
             alt="logo"
             class="w-40 mt-2"
           />

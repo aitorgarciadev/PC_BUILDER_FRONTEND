@@ -79,9 +79,8 @@ const filteredLanguages = computed(() => {
 </template>
 
 <style scoped>
-/* Asegúrate de que el dropdown se ajuste correctamente al contenido */
 .menu-items {
-  max-width: 10px; /* Ajusta según sea necesario */
-  min-width: 10px; /* Ancho mínimo adecuado */
+  max-width: 10px;
+  min-width: 10px;
 }
 </style>

@@ -37,7 +37,6 @@ const productImageUrl = computed(() => {
   return "";
 });
 
-// Control de visibilidad para la animación de fade in y fade out
 const isVisible = ref(false);
 let observer;
 
@@ -53,7 +52,7 @@ onMounted(() => {
       });
     },
     {
-      threshold: 0.1, // El 10% de la tarjeta debe estar visible para activar la animación
+      threshold: 0.1,
     }
   );
   const cardElement = document.querySelector(".product-card");

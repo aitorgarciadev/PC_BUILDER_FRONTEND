@@ -15,67 +15,58 @@ const props = defineProps({
   },
 });
 
-const isFavorite = ref(false); // Estado que indica si es favorito
-const isPulsing = ref(false); // Estado de la animación de pulso
+const isFavorite = ref(false);
+const isPulsing = ref(false);
 
-// Verificar si el producto es favorito
 const checkFavorite = async () => {
   try {
     const favorites = await store.getFavorites(auth.user.access_token);
-    // Verificamos si el producto está en la lista de favoritos del usuario autenticado
     const productFavorite = favorites.content.find(
       (fav) => fav.product.id === props.productId
     );
-    isFavorite.value = !!productFavorite; // Se convierte en true si existe, false si no
+    isFavorite.value = !!productFavorite;
     if (isFavorite.value) {
-      isPulsing.value = true; // Activa el pulso si es favorito
+      isPulsing.value = true;
     }
   } catch (error) {
     console.error("Error al obtener los favoritos:", error);
   }
 };
 
-// Se ejecuta cuando el componente se monta
 onMounted(() => {
   if (auth.user.isAuthenticated) {
-    checkFavorite(); // Comprobar el favorito si el usuario está autenticado
+    checkFavorite();
   }
 });
 
-// Alternar el estado de favorito
 const toggleFavorite = async () => {
   try {
     if (isFavorite.value) {
-      // Si es favorito, lo eliminamos
       await store.removeFavorite(props.productId, auth.user.access_token);
     } else {
-      // Si no es favorito, lo añadimos
       await store.addFavorite(props.productId, auth.user.access_token);
     }
-    // Re-evaluamos el estado después de añadir o eliminar
     await checkFavorite();
   } catch (error) {
     console.error("Error al alternar el estado de favorito:", error);
   }
 };
 
-// Abrir el modal de login si el usuario no está autenticado
 const openLoginModal = () => {
   modal.open("login");
 };
 </script>
 
 <template>
-  <!-- Botón para marcar/desmarcar como favorito si el usuario está autenticado -->
   <button
     v-if="auth.user.isAuthenticated"
     @click="toggleFavorite"
     :class="[
       'heart-button',
       {
-        'text-red-500': isFavorite, // Si es favorito, el corazón es rojo
-        'text-gray-500': !isFavorite, // Si no es favorito, el corazón es gris
-        pulsing: isPulsing, // Aplica animación de pulsación si está activado
+        'text-red-500': isFavorite,
+        'text-gray-500': !isFavorite,
+        pulsing: isPulsing,
       },
     ]"
     class="rounded-md text-center text-sm transition-all focus:shadow-none active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
@@ -93,7 +84,6 @@ const openLoginModal = () => {
     </svg>
   </button>
 
-  <!-- Botón de login si el usuario no está autenticado -->
   <button
     v-else
     @click="openLoginModal"

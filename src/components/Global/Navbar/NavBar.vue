@@ -1,6 +1,5 @@
 <template>
   <div class="bg-white">
-    <!-- Mobile menu -->
     <transition name="fade">
       <div
         v-if="open"
@@ -69,7 +68,6 @@
               </RouterLink>
             </div>
 
-            <!-- Desktop Navigation -->
             <div class="hidden lg:flex h-full space-x-8">
               <a
                 href="/home"

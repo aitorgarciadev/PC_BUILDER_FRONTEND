@@ -1,5 +1,5 @@
 <script setup>
-import FunkoCard from "../Card/ProductCard.vue";
+import ProductCard from "../Card/ProductCard.vue";
 
 defineProps({
   products: {
@@ -32,7 +32,7 @@ const goToPage = (page) => {
       <button
         @click="goToPage(currentPage - 1)"
         :disabled="currentPage === 0"
-        class="rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blueFunko-900 hover:border-blueFunko-900 focus:text-white focus:bg-blueFunko-900 focus:border-blueFunko-900 active:border-blueFunko-900 active:text-white active:bg-blueFunko-900 disabled:pointer-events-none disabled:opacity-50"
+        class="rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blue-900 hover:border-blue-900 focus:text-white focus:bg-blue-900 focus:border-blue-900 active:border-blue-900 active:text-white active:bg-blue-900 disabled:pointer-events-none disabled:opacity-50"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ const goToPage = (page) => {
         :key="page"
         @click="goToPage(page - 1)"
         :disabled="page - 1 === currentPage"
-        class="min-w-9 rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blueFunko-900 hover:border-blueFunko-900 focus:text-white focus:bg-blueFunko-900 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:bg-blueFunko-900 disabled:text-white"
+        class="min-w-9 rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blue-900 hover:border-blue-900 focus:text-white focus:bg-blue-900 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:bg-blue-900 disabled:text-white"
       >
         {{ page }}
       </button>
@@ -63,7 +63,7 @@ const goToPage = (page) => {
       <button
         @click="goToPage(currentPage + 1)"
         :disabled="currentPage + 1 >= totalPages"
-        class="rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blueFunko-900 hover:border-bg-blueFunko-900 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-blueFunko-600 disabled:pointer-events-none disabled:opacity-50"
+        class="rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blue-900 hover:border-bg-blue-900 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-blue-600 disabled:pointer-events-none disabled:opacity-50"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ const goToPage = (page) => {
     <div
       class="grid justify-items-center grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4"
     >
-      <FunkoCard
+      <ProductCard
         v-for="product in products"
         :key="product.productId"
         :product="product"
@@ -100,7 +100,7 @@ const goToPage = (page) => {
       <button
         @click="goToPage(currentPage - 1)"
         :disabled="currentPage === 0"
-        class="rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blueFunko-900 hover:border-blueFunko-900 focus:text-white focus:bg-blueFunko-900 focus:border-blueFunko-900 active:border-blueFunko-900 active:text-white active:bg-blueFunko-900 disabled:pointer-events-none disabled:opacity-50"
+        class="rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blue-900 hover:border-blue-900 focus:text-white focus:bg-blue-900 focus:border-blue-900 active:border-blue-900 active:text-white active:bg-blue-900 disabled:pointer-events-none disabled:opacity-50"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ const goToPage = (page) => {
         :key="page"
         @click="goToPage(page - 1)"
         :disabled="page - 1 === currentPage"
-        class="min-w-9 rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blueFunko-900 hover:border-blueFunko-900 focus:text-white focus:bg-blueFunko-900 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:bg-blueFunko-900 disabled:text-white"
+        class="min-w-9 rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blue-900 hover:border-blue-900 focus:text-white focus:bg-blue-900 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:bg-blue-900 disabled:text-white"
       >
         {{ page }}
       </button>
@@ -131,7 +131,7 @@ const goToPage = (page) => {
       <button
         @click="goToPage(currentPage + 1)"
         :disabled="currentPage + 1 >= totalPages"
-        class="rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blueFunko-900 hover:border-bg-blueFunko-900 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-blueFunko-600 disabled:pointer-events-none disabled:opacity-50"
+        class="rounded-md border border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-blue-900 hover:border-bg-blue-900 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-blue-600 disabled:pointer-events-none disabled:opacity-50"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

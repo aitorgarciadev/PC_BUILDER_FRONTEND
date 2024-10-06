@@ -18,7 +18,7 @@ const props = defineProps({
         ? props.isDiscount
           ? 'bg-red-500'
           : props.isNew
-          ? 'bg-blueFunko-700'
+          ? 'bg-blue-700'
           : 'bg-white'
         : 'bg-slate-800'
     "

@@ -1,5 +1,4 @@
 <template>
-  <!-- Contenedor principal con animación al hacer scroll -->
   <div
     class="mx-auto max-w-full lg:mx-0 text-center pb-20 pt-20 bg-white p-8 items-center animate-item"
   >
@@ -48,18 +47,15 @@ import { onMounted, ref, onBeforeUnmount } from "vue";
 
 const animateItems = ref([]);
 
-// Función para manejar el scroll y la animación
 const handleScroll = () => {
   const scrollY = window.scrollY;
   const windowHeight = window.innerHeight;
 
-  // Agregar animación a los elementos con la clase 'animate-item'
   animateItems.value.forEach((item) => {
     const rect = item.getBoundingClientRect();
     const itemTop = rect.top + scrollY;
     const itemBottom = rect.bottom + scrollY;
 
-    // Verificar si el elemento está en el viewport
     if (scrollY + windowHeight > itemTop + 50 && scrollY < itemBottom) {
       item.classList.add("visible");
     } else {
@@ -69,33 +65,28 @@ const handleScroll = () => {
 };
 
 onMounted(() => {
-  // Obtener todos los elementos con la clase 'animate-item'
   animateItems.value = Array.from(document.querySelectorAll(".animate-item"));
 
-  // Agregar el event listener para el scroll
   window.addEventListener("scroll", handleScroll);
 
-  // Llamar la función por si la página ya está en scroll inicial
   handleScroll();
 });
 
-// Limpiar el event listener al desmontar el componente
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", handleScroll);
 });
 </script>
 
 <style scoped>
-/* Estilos para los elementos que se animan */
 .animate-item {
-  opacity: 0; /* Inicialmente ocultos */
-  transform: translateY(20px); /* Desplazar un poco hacia abajo */
-  transition: opacity 0.6s ease, transform 0.6s ease; /* Transición suave */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .animate-item.visible {
-  opacity: 1; /* Cuando está visible, mostrarlo */
-  transform: translateY(0); /* Volver a la posición original */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 html {
