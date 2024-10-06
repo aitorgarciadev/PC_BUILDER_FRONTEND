@@ -74,6 +74,11 @@ updateItemsPerSlide();
 
 // Llamada a la store para obtener los productos con descuento
 productStore.fetchDiscountedProducts();
+
+// Función para manejar el favorito
+const toggleFavorite = (productId) => {
+  productStore.toggleFavorite(productId); // Llama al método del store
+};
 </script>
 
 <template>
@@ -93,7 +98,7 @@ productStore.fetchDiscountedProducts();
       <div class="relative">
         <!-- Botones de navegación -->
         <button
-          @click="scrollLeft"
+          @click.stop="scrollLeft"
           class="lg:flex hidden absolute -left-8 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white rounded-full p-3 shadow-lg hover:bg-gray-700 transition duration-300"
         >
           <svg
@@ -112,7 +117,7 @@ productStore.fetchDiscountedProducts();
         </button>
 
         <button
-          @click="scrollRight"
+          @click.stop="scrollRight"
           class="lg:flex hidden absolute -right-8 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white rounded-full p-3 shadow-lg hover:bg-gray-700 transition duration-300"
         >
           <svg
@@ -130,29 +135,33 @@ productStore.fetchDiscountedProducts();
           </svg>
         </button>
 
-        <!-- Contenedor de productos con animación de aparición -->
-        <transition-group
-          name="fade"
-          tag="div"
+        <!-- Contenedor de productos -->
+        <div
           class="bg-white pt-10 pr-8 pl-8 pb-10 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
         >
-          <div
-            v-for="(product, index) in visibleProducts"
-            :key="
-              product.productId || `${product.productId}-${currentIndex.value}`
-            "
-            class="flex-none w-64"
+          <transition
+            v-for="product in visibleProducts"
+            :key="product.id"
+            name="slide-fade"
+            mode="out-in"
           >
-            <FunkoCard :product="product" />
-          </div>
-        </transition-group>
+            <div class="flex-none w-64">
+              <!-- Asegúrate de pasar correctamente el productId y el estado de favorito -->
+              <FunkoCard
+                :product="product"
+                :isFavorite="product.isFavorite"
+                @toggle-favorite="toggleFavorite(product.id)"
+              />
+            </div>
+          </transition>
+        </div>
 
         <!-- Botones para móviles -->
         <div
           class="lg:hidden pt-10 flex justify-between items-center relative left-0 right-0 top-[calc(100%+1rem)] space-x-1"
         >
           <button
-            @click="scrollLeft"
+            @click.stop="scrollLeft"
             class="flex-1 bg-gray-900 flex flex-row justify-center items-center text-white rounded-md p-3 shadow-lg hover:bg-gray-700 transition duration-300 text-center space-x-2"
           >
             <svg
@@ -171,7 +180,7 @@ productStore.fetchDiscountedProducts();
             <p class="text-center text-md">Previous</p>
           </button>
           <button
-            @click="scrollRight"
+            @click.stop="scrollRight"
             class="flex-1 bg-gray-900 flex flex-row justify-center items-center text-white rounded-md p-3 shadow-lg hover:bg-gray-700 transition duration-300 text-center space-x-2"
           >
             <p class="text-center text-md">Next</p>
@@ -196,13 +205,20 @@ productStore.fetchDiscountedProducts();
 </template>
 
 <style scoped>
-/* Animación fade-in para nuevos productos */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.4s ease-in-out;
+/* Animación de deslizamiento con fade para nuevas tarjetas */
+.slide-fade-enter-active {
+  transition: all 0.5s ease;
 }
-.fade-enter-from,
-.fade-leave-to {
+.slide-fade-leave-active {
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+.slide-fade-enter-from {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.slide-fade-leave-to {
+  transform: translateX(-100%);
   opacity: 0;
 }
 </style>
