@@ -23,21 +23,18 @@ const discountedPrice = computed(() => {
 });
 
 const productImageUrl = computed(() => {
-  // Comentamos esta parte para que siempre muestre la imagen alternativa
-  // if (props.product.imageHash) {
-  //   const isBase64 =
-  //     props.product.imageHash.startsWith("/") ||
-  //     props.product.imageHash.includes("base64");
+  if (props.product.imageHash) {
+    const isBase64 =
+      props.product.imageHash.startsWith("/") ||
+      props.product.imageHash.includes("base64");
 
-  //   if (isBase64) {
-  //     return `data:image/png;base64,${props.product.imageHash}`;
-  //   } else {
-  //     return props.product.imageHash;
-  //   }
-  // }
-
-  // Imagen alternativa de ordenador
-  return "https://img.freepik.com/premium-vector/computer-with-neon-lights-computer-with-neon-lights-laptop-with-neon-light-black-background_912214-47900.jpg";
+    if (isBase64) {
+      return `data:image/png;base64,${props.product.imageHash}`;
+    } else {
+      return props.product.imageHash;
+    }
+  }
+  return "";
 });
 
 const isVisible = ref(false);

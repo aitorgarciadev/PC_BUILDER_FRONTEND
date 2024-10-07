@@ -43,9 +43,9 @@ const handlePageChange = async (newPage) => {
 <template>
   <div class="mx-auto max-w-full lg:mx-0 text-start px-24 mt-10">
     <h2
-      class="text-3xl font-bold tracking-tight text-dark sm:text-4xl text-center"
+      class="text-2xl font-semibold tracking-tight text-dark sm:text-4xl text-center"
     >
-      Favorite
+      Your favorite products
     </h2>
   </div>
   <div class="mx-auto max-w-2xl px-4 sm:px-6 sm:pt-4 lg:max-w-7xl lg:px-8">

@@ -17,8 +17,8 @@
   "category": "Category",
   "price": "Price",
   "profile": {
-    "personalInformation": "Personal Information",
-    "usePermanentAddress": "Use a permanent address where you can receive the products.",
+    "personalInformation": "Profile Information",
+    "usePermanentAddress": "Provide a permanent address where you can securely receive your products.",
     "firstName": "First name",
     "lastName": "Last name",
     "countryCode": "Country Code",
@@ -29,7 +29,7 @@
     "region": "State / Region",
     "postalCode": "ZIP / Postal code",
     "changePassword": "Change Password",
-    "save": "Save",
+    "save": "Save Changes",
     "profileUpdatedSuccess": "Profile updated successfully",
     "errorUpdatingProfile": "Error updating profile"
   },
