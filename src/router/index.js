@@ -38,6 +38,20 @@ const router = createRouter({
       component: () => import("../views/FavoriteView.vue"),
       meta: { requiresAuth: true },
     },
+
+    {
+      path: "/admin",
+      component: () => import("/src/views/admin/AdminView.vue"),
+      meta: { requiresAdmin: true },
+      children: [
+        {
+          path: "/admin-products",
+          name: "admin-products",
+          component: () =>
+            import("/src/components/AdminDashboard/ProductsControl.vue"),
+        },
+      ],
+    },
   ],
 });
 
