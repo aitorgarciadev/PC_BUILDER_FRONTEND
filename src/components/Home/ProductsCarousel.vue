@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, nextTick } from "vue";
-import { useProductStore } from "../../stores/product/productStore";
+import { useProductStore } from "../../stores/productStore";
 import { storeToRefs } from "pinia";
 import ProductCard from "../Card/ProductCard.vue";
 

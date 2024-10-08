@@ -18,7 +18,7 @@ const props = defineProps({
         ? props.isDiscount
           ? 'bg-yellow-400 font-semibold text-black'
           : props.isNew
-          ? 'bg-purple-700'
+          ? 'bg-violet-700 font-semibold text-white'
           : 'bg-white'
         : 'bg-slate-800'
     "

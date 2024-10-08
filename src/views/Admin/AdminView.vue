@@ -6,15 +6,10 @@
       class="relative flex max-w-[20rem] flex-col rounded-xl bg-white bg-clip-border p-4 text-gray-700 shadow-xl shadow-blue-gray-900/5"
     >
       <div class="flex items-center gap-2 p-4 mb-2">
-        <img
-          src="../../assets/img/Logo/LOGO-IMG.svg"
-          alt="brand"
-          class="w-20 h-20"
-        />
         <h5
-          class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900"
+          class="block text-center font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-black"
         >
-          MASKESTILO
+          PC-BUILDER
         </h5>
       </div>
       <nav

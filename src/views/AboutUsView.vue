@@ -3,10 +3,6 @@
     <AboutUs />
   </section>
 
-  <section id="BlogSection" class="section">
-    <BlogSection />
-  </section>
-
   <!-- Botón para subir -->
   <UpBTN :class="{ visible: upButtonVisible }" />
 

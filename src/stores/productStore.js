@@ -82,7 +82,7 @@ export const useProductStore = defineStore("products", () => {
     error.value = null;
     try {
       const response = await axios.get(`${BASE_URL}/${id}`);
-      product.value = response.data;
+      product.value = response.data || {};
     } catch (err) {
       handleError(err);
     } finally {

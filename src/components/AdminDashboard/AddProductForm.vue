@@ -11,8 +11,8 @@ const props = defineProps({
       price: 0.0,
       stock: 0,
       category: null,
-      discount: null,
-      imageHash: null,
+      discount: NaN,
+      imageHash: "desktop.jpg",
     }),
   },
   isLoadingCategories: Boolean,
@@ -20,7 +20,7 @@ const props = defineProps({
   categoryError: String,
 });
 
-const fileBase64String = ref(null);
+// const fileBase64String = ref(null);
 
 const emit = defineEmits(["submit", "cancel"]);
 
@@ -47,19 +47,19 @@ const handleCancel = () => {
   emit("cancel");
 };
 
-const onFileChange = (product) => {
-  const file = product.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      fileBase64String.value = e.target.result;
-      form.value.imageHash = fileBase64String.value
-        ? fileBase64String.value.split(",")[1]
-        : null;
-    };
-    reader.readAsDataURL(file);
-  }
-};
+// const onFileChange = (product) => {
+//   const file = product.target.files[0];
+//   if (file) {
+//     const reader = new FileReader();
+//     reader.onload = (e) => {
+//       fileBase64String.value = e.target.result;
+//       form.value.imageHash = fileBase64String.value
+//         ? fileBase64String.value.split(",")[1]
+//         : null;
+//     };
+//     reader.readAsDataURL(file);
+//   }
+// };
 </script>
 <template>
   <form @submit.prevent="handleSubmit" class="flex flex-col gap-5">
@@ -163,7 +163,7 @@ const onFileChange = (product) => {
       }}</span>
     </div>
 
-    <div>
+    <!-- <div>
       <label class="block text-sm font-medium text-slate-700"
         >Product Image</label
       >
@@ -176,7 +176,7 @@ const onFileChange = (product) => {
         @change="onFileChange"
         class="mt-1 block w-full px-4 py-2 border-2 border-slate-200 rounded-md focus:outline-none focus:border-blueFunko-600"
       />
-    </div>
+    </div> -->
 
     <div class="mt-4 flex justify-end space-x-2">
       <Button
@@ -187,7 +187,7 @@ const onFileChange = (product) => {
       >
       <Button
         type="submit"
-        class="bg-primary hover:bg-primary/90 rounded-lg px-5 py-2 font-medium text-white focus:outline-none"
+        class="bg-green-700 hover:bg-green-600 rounded-lg px-5 py-2 font-medium text-white focus:outline-none"
         >Añadir producto</Button
       >
     </div>

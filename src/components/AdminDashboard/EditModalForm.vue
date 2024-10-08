@@ -194,7 +194,7 @@ const onFileChange = (product) => {
       >
       <Button
         type="submit"
-        class="bg-primary hover:bg-primary/90 rounded-lg px-5 py-2 font-medium text-white focus:outline-none"
+        class="bg-black hover:bg-primary/90 rounded-lg px-5 py-2 font-medium text-white focus:outline-none"
         >Guardar cambios</Button
       >
     </div>

@@ -27,14 +27,15 @@ const productImageUrl = computed(() => {
     const isBase64 =
       props.product.imageHash.startsWith("/") ||
       props.product.imageHash.includes("base64");
-
     if (isBase64) {
       return `data:image/png;base64,${props.product.imageHash}`;
     } else {
       return props.product.imageHash;
     }
   }
-  return "";
+
+  // Imagen alternativa de ordenador
+  return "https://www.shutterstock.com/shutterstock/photos/2059817444/display_1500/stock-vector-no-image-available-photo-coming-soon-illustration-vector-2059817444.jpg";
 });
 
 const isVisible = ref(false);

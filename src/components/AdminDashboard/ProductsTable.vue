@@ -22,7 +22,7 @@ const handleDelete = () => {
       <td class="p-4 border-b border-blue-gray-50">
         <div class="flex items-center gap-3">
           <img
-            src="https://shop.mango.com/assets/rcs/pics/static/T7/fotos/S/77027689_05_B.jpg?imwidth=2048&imdensity=1&ts=1725440677144"
+            src="https://seeklogo.com/images/A/AMD-logo-B5E0D58D48-seeklogo.com.png"
             alt="John Michael"
             class="relative inline-block h-9 w-9 !rounded-full object-cover object-center"
           />

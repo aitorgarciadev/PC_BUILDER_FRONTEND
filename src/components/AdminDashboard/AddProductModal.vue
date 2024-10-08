@@ -54,7 +54,7 @@ const closeModal = () => {
         <h3 class="text-2xl font-semibold text-slate-950">Add New Product</h3>
         <button
           @click="closeModal"
-          class="w-8 h-8 bg-slate-100 rounded-lg hover:bg-terciary text-dark text-2xl justify-center items-center flex"
+          class="w-8 h-8 bg-black rounded-lg hover:bg-terciary text-dark text-2xl justify-center items-center flex"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

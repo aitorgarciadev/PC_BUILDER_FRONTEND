@@ -56,12 +56,15 @@ const decrementQuantity = () => {
   }
 };
 
-// const productImage = computed(() => {
-//   if (!props.product.image) return '';
-//   return props.product.image.startsWith('http')
-//     ? props.product.image
-//     : new URL(`../assets/img/CardImage/${props.product.image}`, import.meta.url).href;
-// });
+const productImage = computed(() => {
+  if (!props.product.image) {
+    return "https://www.shutterstock.com/shutterstock/photos/2059817444/display_1500/stock-vector-no-image-available-photo-coming-soon-illustration-vector-2059817444.jpg";
+  }
+  return props.product.image.startsWith("http")
+    ? props.product.image
+    : new URL(`../assets/img/CardImage/${props.product.image}`, import.meta.url)
+        .href;
+});
 
 const addToCart = () => {
   if (quantity.value <= props.product.stock) {
